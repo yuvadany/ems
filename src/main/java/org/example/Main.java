@@ -128,7 +128,9 @@ public class Main {
         System.out.println(decimalList);
         decimalList.stream().sorted(Comparator.reverseOrder()).forEach(System.out::println);
         System.out.println();
-        decimalList.stream().sorted(Comparator.naturalOrder()).forEach(System.out::println);
+       var ascOrderList = decimalList.stream().sorted(Comparator.naturalOrder()).collect(Collectors.toList());
+       System.out.println(" ascOrderList - "+ascOrderList);
+
     }
 
     public static void prefixSuffix() {
@@ -142,7 +144,7 @@ public class Main {
     }
 
     public static void numbersMultiple5() {
-        System.out.println("7 -- numbersMultiple5 --  ");
+        System.out.println("7 -- numbers multiplied by 5 --  ");
         List<Integer> listOfIntegers = Arrays.asList(45, 12, 56, 15, 24, 75, 31, 89, 125);
         System.out.print(" -- Input String --  ");
         listOfIntegers.stream().forEach(System.out::println);
@@ -219,7 +221,7 @@ public class Main {
 
 
     public static void LargestNumberOfIntArray() {
-        System.out.println("14 -- LargestNumberOfIntArray --  ");
+        System.out.println("14 -- second LargestNumberOfIntArray --  ");
         List<Integer> listOfIntegers = Arrays.asList(45, 12, 56, 15, 24, 75, 31, 89);
         System.out.println("input ");
         listOfIntegers.stream().forEach(System.out::println);
@@ -249,7 +251,7 @@ public class Main {
     }
 
     public static void commonElements() {
-        System.out.println("17 --Given an integer array, find sum and average of all elements --  ");
+        System.out.println("17 --Given an integer arrays , find the common elements --  ");
         List<Integer> list1 = Arrays.asList(71, 21, 34, 89, 89, 56, 28);
         System.out.println(" input-1 ");
         list1.stream().forEach(System.out::println);
@@ -399,7 +401,7 @@ public class Main {
 
 
     public static void lastElementOfArray() {
-        System.out.println("\n (32) -- last Element Of an Array --  ");
+        System.out.println("\n (31) -- last Element Of an Array --  ");
         List<String> listOfStrings = Arrays.asList("One", "Two", "Three", "Four", "Five", "Six","null");
         String lastElement = listOfStrings.stream().skip(listOfStrings.size() - 1).findFirst().get();
         System.out.println(lastElement);
@@ -407,10 +409,12 @@ public class Main {
 
     public static void ageOfApersonInYears() {
         System.out.println("\n (32) -- Find the age of a person in years if the birthday has given -- ");
-        LocalDate birthDay = LocalDate.of(1987, 10, 26);
+        LocalDate rBirthDay = LocalDate.of(1994, 4, 26);
+        LocalDate sBirthDay = LocalDate.of(1991, 8, 3);
         LocalDate today = LocalDate.now();
 
-        System.out.println(ChronoUnit.YEARS.between(birthDay, today));
+        System.out.println(ChronoUnit.DAYS.between(rBirthDay, today));
+        System.out.println(ChronoUnit.DAYS.between(sBirthDay, today));
     }
 
 
