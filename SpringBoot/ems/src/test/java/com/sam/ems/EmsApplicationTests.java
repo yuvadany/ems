@@ -8,6 +8,8 @@ class EmsApplicationTests {
 
 	@Test
 	void contextLoads() {
+		int test=2;
+		System.out.println("Tets data"+test);
 	}
 
 }
