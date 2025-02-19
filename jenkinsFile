@@ -2,7 +2,7 @@ pipeline{
   agent any
        stages{
             stage("Build"){
-steps{echo "builing the Application"}
+steps{echo "builing the Application outside file"}
                   
                             }
             stage("Test"){
