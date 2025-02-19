@@ -5,7 +5,7 @@ maven "maven"
 }
        stages{
             stage("Build"){
-steps{echo "builing the Application outside file"}
+steps{echo "builing the Application mit Maven"}
                   
                             }
             stage("Test"){
