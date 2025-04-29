@@ -2,16 +2,17 @@ package com.sam.ems.controller;
 
 import com.sam.ems.model.Users;
 import com.sam.ems.repository.UserRepository;
+import com.sam.ems.service.UsersService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/v1")
+@RequestMapping("/v1/ems")
 public class HomeControler {
     @Autowired
-    private UserRepository userRepo;
+    private UsersService usersService;
 
     @GetMapping("/welcome")
     public String hello(HttpServletRequest request){
@@ -29,14 +30,15 @@ public class HomeControler {
 
 
     @PostMapping("/addUser")
-    public String addingUser(@RequestBody  Users users){
-        return "Users  added ..."+users.getUsername();
+    public Users addingUser(@RequestBody  Users users){
+        return usersService.registerUser(users);
     }
-
 
     @GetMapping("/getUsers")
     public String getUsers(@RequestParam String userName){
-        return "Users  added ..."+userRepo.findByUsername(userName);
+      // return "Users  pulled is... "+usersService.findByUsername(userName).getUsername();
+        //return "Users  added ..."+userName;
+        return userName;
     }
 
 }

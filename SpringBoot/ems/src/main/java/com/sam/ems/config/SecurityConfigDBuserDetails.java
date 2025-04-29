@@ -1,6 +1,7 @@
 package com.sam.ems.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -41,10 +42,10 @@ public class SecurityConfigDBuserDetails {
         return provider;
     }
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
+   // @Bean
+    /*public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder(12);
-    }
+    }*/
 
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
